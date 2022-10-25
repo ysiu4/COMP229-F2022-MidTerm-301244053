@@ -1,0 +1,55 @@
+<% include ../partials/header.ejs %>
+
+<div class="container">
+  <h1 class="main-caption"><%= title %></h1>
+  <div class="row">
+    <div class="offset-md-3 col-md-6">
+      <form class="form" method="post">
+        <div class="from-group">
+          <label for="Carname">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="Carname"
+            name="Carname"
+            required>
+        </div>
+        <br />
+        <div class="from-group">
+          <label for="Category">Category</label>
+          <input
+            type="text"
+            class="form-control"
+            id="Category"
+            name="Category"
+            required>
+        </div>
+        <br />
+        <div class="from-group">
+            <label for="Carmodel">Model</label>
+            <input
+              type="text"
+              class="form-control"
+              id="Carmodel"
+              name="Carmodel"
+              required>
+        </div>
+        <br />
+        <div class="from-group">
+            <label for="Price">Price</label>
+            <input
+              type="text"
+              class="form-control"
+              id="Price"
+              name="Price"
+              required>
+        </div>
+        <br /><br />
+        <button class="btn btn-primary" type="submit">Add</button>
+        <a href="/" class="btn btn-secondary btn-sm">Cancel</a>
+      </form>
+    </div>
+  </div>
+</div>
+
+<% include ../partials/footer.ejs %>
