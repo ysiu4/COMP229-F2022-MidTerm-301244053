@@ -1,3 +1,10 @@
+///////////////////////////////////////////////////////
+// File: config/app.js
+// Student name: Yuk Ming Siu
+// Student ID: 301244053
+// App name: My Favourite Cars (Mid Term Test)
+///////////////////////////////////////////////////////
+
 // moddules for node and express
 let createError = require("http-errors");
 let express = require("express");

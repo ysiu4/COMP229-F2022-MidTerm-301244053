@@ -1,3 +1,10 @@
+///////////////////////////////////////////////////////
+// File: config/app.js
+// Student name: Yuk Ming Siu
+// Student ID: 301244053
+// App name: My Favourite Cars (Mid Term Test)
+///////////////////////////////////////////////////////
+
 let app = require('./server/config/app');
 let debug = require('debug')('comp308-w2019-midterm:server');
 let http = require('http');

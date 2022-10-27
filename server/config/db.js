@@ -1,3 +1,10 @@
+///////////////////////////////////////////////////////
+// File: config/app.js
+// Student name: Yuk Ming Siu
+// Student ID: 301244053
+// App name: My Favourite Cars (Mid Term Test)
+///////////////////////////////////////////////////////
+
 module.exports = {
   //local MongoDB deployment ->
   // URI: "mongodb://127.0.0.1/car_store",
