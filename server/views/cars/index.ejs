@@ -16,8 +16,9 @@
           <thead>
             <tr>
               <th>Car Name</th>
-              <th class="text-center">Car Model</th>
+              <!-- MINOR BUG FIX: model and category columns were wrongly swapped -->
               <th class="text-center">Category</th>
+              <th class="text-center">Model</th>
               <th class="text-center">Price</th>
               <th class="text-center"></th>
                </tr>
@@ -27,10 +28,9 @@
             <% for (let count = 0; count < cars.length; count++) { %>
             <tr>
               <td><%= cars[count].Carname %></td>
-
               <td class="text-center"><%= cars[count].Category %></td>
               <td class="text-center"><%= cars[count].Carmodel %></td>
-              <td class="text-center"><%= cars[count].Price %></td>
+              <td class="text-right"><%= cars[count].Price %></td>
 
               <td class="text-center">
                 <!-- ------------------------ -->
@@ -48,9 +48,26 @@
       <!--FIX the DELETE BUTTON HERE -->
       <!-- ------------------------- -->
       <!-- DONE -->
-      <a href="/delete" class="btn btn-warning btn-sm">
-        <i class="fas fa-trash"></i> Delete</a>
-    </main>
+      <hr>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <h4><i>Delete records with ...</i></h4>
+          <form class="form" method="get" action="/cars/delete">
+            Car name: <input type="text" id="Carname" name="Carname">
+            <br>
+            <b>AND</b>
+            <br>
+            Price range: from 
+            <input type="number" id="PriceRangeMin" name="PriceRangeMin">
+             to 
+            <input type="number" id="PriceRangeMax" name="PriceRangeMax">
+            <br>
+            <br>
+            <input type="submit" value="Delete" class="btn btn-warning btn-sm">
+          </form>
+        </div>
+      </div>
+      
       <div class="col-md-offset-1 col-md-10 text-center">
         <ul class="pagination pagination-lg pager" id="myPager"></ul>
       </div>

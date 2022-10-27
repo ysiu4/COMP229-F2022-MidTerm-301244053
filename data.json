@@ -1,0 +1,86 @@
+[
+	{
+		"Carname": "Alfa Romeo 4C",
+		"Carmodel": "4C",
+		"Category": "Convertible",
+		"Price": 63900
+	},
+	{
+		"Carname": "Aston Martin Virage",
+		"Carmodel": "Virage",
+		"Category": "Convertible",
+		"Price": 223295
+	},
+	{
+		"Carname": "Audi V8",
+		"Carmodel": "V8",
+		"Category": "Sedan",
+		"Price": 2239
+	},
+	{
+		"Carname": "Bentley Mulsanne",
+		"Carmodel": "Mulsanne",
+		"Category": "Sedan",
+		"Price": 335600
+	},
+	{
+		"Carname": "BMW 1 Series M",
+		"Carmodel": "1 Series M",
+		"Category": "Coupe",
+		"Price": 46135
+	},
+	{
+		"Carname": "Buick Verano",
+		"Carmodel": "Verano",
+		"Category": "Sedan",
+		"Price": 24115
+	},
+	{
+		"Carname": "FIAT 500X",
+		"Carmodel": "500X",
+		"Category": "4dr SUV",
+		"Price": 19995
+	},
+	{
+		"Carname": "Ford Windstar Cargo",
+		"Carmodel": "Windstar Cargo",
+		"Category": "Cargo Minivan",
+		"Price": 21075
+	},
+	{
+		"Carname": "Lexus CT 200h",
+		"Carmodel": "CT 200h",
+		"Category": "4dr Hatchback",
+		"Price": 32200
+	},
+	{
+		"Carname": "Nissan 350Z",
+		"Carmodel": "350Z",
+		"Category": "Coupe",
+		"Price": 33200
+	},
+	{
+		"Carname": "Toyota Tundra",
+		"Carmodel": "Tundra",
+		"Category": "Crew Cab Pickup",
+		"Price": 50030
+	},
+	{
+		"Carname": "Toyota Venza",
+		"Carmodel": "Venza",
+		"Category": "Wagon",
+		"Price": 31510
+	},
+	{
+		"Carname": "Volkswagen Beetle",
+		"Carmodel": "Beetle",
+		"Category": "2dr Hatchback",
+		"Price": 25895
+	},
+	{
+		"Carname": "Volkswagen Passat",
+		"Carmodel": "Passat",
+		"Category": "Sedan",
+		"Price": 26915
+	}
+]

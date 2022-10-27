@@ -27,7 +27,7 @@ router.get("/add", (req, res, next) => {
    * ADD CODE HERE *
    *****************/
   // DONE
-   res.render('cars/add', {
+  res.render('cars/add', {
     title: 'Add a Car',
   });
 });
@@ -38,18 +38,59 @@ router.post("/add", (req, res, next) => {
    * ADD CODE HERE *
    *****************/
   // DONE
-  new_car_record = {
+  let new_car_record = {
     Carname: req.body.Carname,
     Category: req.body.Category,
     Carmodel: req.body.Carmodel,
-    Price: parseInt(req.body.Price),
+    Price: isNaN(req.body.Price) ? -1 : parseInt(req.body.Price),
   };
+  if (new_car_record.Price < 0) {
+    console.log('Invalid price value: ' + req.body.Price);
+    res.redirect('/cars');
+    return;
+  }
   car.create(new_car_record, (err, car_record) => {
     if (err) {
       console.log('Insert document error: ' + err);
     }
     res.redirect('/cars');
   });
+});
+
+// GET - process the delete
+router.get("/delete", (req, res, next) => {
+  /*****************
+   * ADD CODE HERE *
+   *****************/
+  // DONE
+  let car_name = req.query.Carname;
+  let price_range_min = req.query.PriceRangeMin;
+  let price_range_max = req.query.PriceRangeMax;
+
+  let condition = {}
+  if (car_name) {
+    condition['Carname'] = car_name.trim();
+  }
+  if (price_range_min && price_range_max) {
+    price_min = parseInt(price_range_min)
+    price_max = parseInt(price_range_max)
+    condition['Price'] = price_min < price_max ? { $gte: price_min, $lte: price_max }: { $gte: price_max, $lte: price_min };
+  }
+  if (Object.keys(condition).length > 0) {
+    // do delete operation to database
+    console.log('Delete document(s) with condition: ' + JSON.stringify(condition));
+    car.deleteMany(condition, (err, result) => {
+      if (err) {
+        console.log('Delete document error: ' + err);
+      } else {
+        console.log(result.deletedCount + ' document(s) deleted');
+      }
+      res.redirect('/cars');
+    });
+  } else {
+    console.log('No condition is provided.')
+    res.redirect('/cars');
+  }
 });
 
 // GET the Car Details page in order to edit an existing Car
@@ -78,12 +119,17 @@ router.post("/:id", (req, res, next) => {
    * ADD CODE HERE *
    *****************/
   // DONE
-   new_car_record = {
+  let new_car_record = {
     Carname: req.body.Carname,
     Category: req.body.Category,
     Carmodel: req.body.Carmodel,
-    Price: parseInt(req.body.Price),
+    Price: isNaN(req.body.Price) ? -1 : parseInt(req.body.Price),
   };
+  if (new_car_record.Price < 0) {
+    console.log('Invalid price value: ' + req.body.Price);
+    res.redirect('/cars');
+    return;
+  }
   let id = req.params.id;
   car.updateOne({_id: id}, new_car_record, (err, car_record) => {
     if (err) {
@@ -91,13 +137,6 @@ router.post("/:id", (req, res, next) => {
     }
     res.redirect('/cars');
   });
-});
-
-// GET - process the delete
-router.get("/delete", (req, res, next) => {
-  /*****************
-   * ADD CODE HERE *
-   *****************/
 });
 
 module.exports = router;
